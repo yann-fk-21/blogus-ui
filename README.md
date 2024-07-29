@@ -1,2 +1,0 @@
-# blogus-ui
-frontend application
