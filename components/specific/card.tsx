@@ -3,31 +3,43 @@ import Image from 'next/image';
 import { FaCircle } from 'react-icons/fa';
 import Link from 'next/link';
 
-export default function Card() {
+interface CardProps {
+  isHorizontal?: boolean;
+}
+
+export default function Card({ isHorizontal }: CardProps) {
   const dummyImage =
     'https://images.unsplash.com/photo-1716637644831-e046c73be197?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2hhdGdwdHxlbnwwfHwwfHx8MA%3D%3D';
 
   return (
     <React.Fragment>
-      <div className="w-full h-full">
-        <div className="relative h-60 w-full">
+      <div className={` h-full ${isHorizontal && 'flex flex-col gap-2'}`}>
+        <div className="h-60 w-full">
           <Image
-            className="h-full w-full rounded-lg object-cover bg-gray-100"
+            className="h-full w-full  object-cover bg-gray-100"
             src={dummyImage}
             alt="placeholder"
             width={500}
             height={500}
           />
-          <span className="px-4 py-2 text-xs rounded-full text-white text-center  bg-gray-500 absolute top-3 left-2">
-            <p> Tech-AI</p>
-          </span>
         </div>
-        <div className="py-2 text-sm text-gray-400 flex items-center gap-4">
-          <h1>30 Jan 2024</h1>
+        <div className="py-2 text-sm text-gray-400 flex items-center gap-2">
+          <div className="flex items-center gap-3 pt-1">
+            <Image
+              className="h-7 w-7 rounded-full object-cover"
+              src={dummyImage}
+              alt="placeholder"
+              width={500}
+              height={500}
+            />
+            <p className="text-sm text-gray-600 font-semibold hover:underline cursor-pointer">
+              Will Smith
+            </p>
+          </div>
           <FaCircle className="text-gray-300" size={5} />
-          <p>10 mins read</p>
+          <h1>30 Jan 2024</h1>
         </div>
-        <div className="py-2">
+        <div className="">
           <Link
             href="/"
             className="text-lg text-gray-900 font-bold hover:underline"
@@ -38,18 +50,9 @@ export default function Card() {
             As we step into 2024, the landscape of technology continues to
             evolve at a rapid pace...
           </p>
-        </div>
-        <div className="flex items-center gap-3 pt-1">
-          <Image
-            className="h-7 w-7 rounded-full object-cover"
-            src={dummyImage}
-            alt="placeholder"
-            width={500}
-            height={500}
-          />
-          <p className="text-sm text-gray-600 font-semibold hover:underline cursor-pointer">
-            Will Smith
-          </p>
+          <button className="text-xs px-4 py-2  mt-3 rounded-full text-gray-600 text-center border-gray-600 border">
+            Tech-AI
+          </button>
         </div>
       </div>
     </React.Fragment>

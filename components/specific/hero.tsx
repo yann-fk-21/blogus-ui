@@ -2,18 +2,10 @@
 
 import React, { useState } from 'react';
 
-import { filters } from '@/constant/constant';
-import Link from 'next/link';
-import Button from '../common/button';
 import BigCard from './big-card';
+import Card from './card';
 
 export default function Hero() {
-  const [currentFliter, setCurrentFilter] = useState('all');
-
-  const changeFilter = (filter: string) => {
-    setCurrentFilter(filter);
-  };
-
   return (
     <React.Fragment>
       <div className="py-10 flex flex-col  gap-12">
@@ -26,25 +18,12 @@ export default function Hero() {
             Find the latest news, cooking recipes or the latest tip :)
           </p>
         </div>
-        <BigCard />
-        <div className="flex items-center gap-4 px-20">
-          {filters.map((filter) => (
-            <span>
-              {currentFliter.toLowerCase() ===
-              filter.name.toLocaleLowerCase() ? (
-                <Button>{filter.name}</Button>
-              ) : (
-                <Link
-                  className="text-gray-500 hover:text-gray-400 transition-all"
-                  onClick={() => changeFilter(filter.name)}
-                  key={filter.id}
-                  href="/"
-                >
-                  {filter.name}
-                </Link>
-              )}
-            </span>
-          ))}
+        <div className=" flex gap-10 px-20 py-5">
+          <BigCard />
+          <div className="w-1/3 flex flex-col gap-3">
+            <Card isHorizontal />
+            <Card isHorizontal />
+          </div>
         </div>
       </div>
     </React.Fragment>
