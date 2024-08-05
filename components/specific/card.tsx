@@ -14,14 +14,17 @@ export default function Card({ isHorizontal }: CardProps) {
   return (
     <React.Fragment>
       <div className={` h-full ${isHorizontal && 'flex flex-col gap-2'}`}>
-        <div className="h-60 w-full">
+        <div className="h-60 w-full relative ">
           <Image
-            className="h-full w-full  object-cover bg-gray-100"
+            className="h-full w-full object-cover bg-gray-100"
             src={dummyImage}
             alt="placeholder"
             width={500}
             height={500}
           />
+          <button className="text-xs px-4 py-2 absolute top-0  text-gray-600 bg-white text-center border-gray-600 border">
+            Tech-AI
+          </button>
         </div>
         <div className="py-2 text-sm text-gray-400 flex items-center gap-2">
           <div className="flex items-center gap-3 pt-1">
@@ -50,9 +53,12 @@ export default function Card({ isHorizontal }: CardProps) {
             As we step into 2024, the landscape of technology continues to
             evolve at a rapid pace...
           </p>
-          <button className="text-xs px-4 py-2  mt-3 rounded-full text-gray-600 text-center border-gray-600 border">
-            Tech-AI
-          </button>
+          <Link
+            href="/"
+            className="text-sm text-violet-600 font-bold underline"
+          >
+            Continue to read
+          </Link>
         </div>
       </div>
     </React.Fragment>
