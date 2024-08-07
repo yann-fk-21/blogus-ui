@@ -19,7 +19,10 @@ export default function Hero() {
           </p>
         </div>
         <div className=" flex gap-10 px-20 py-5">
-          <BigCard />
+          <div className=" w-2/3 flex flex-col items-center gap-5">
+            <BigCard />
+            <BigCard />
+          </div>
           <div className="w-1/3 flex flex-col gap-3">
             <Card isHorizontal />
             <Card isHorizontal />
