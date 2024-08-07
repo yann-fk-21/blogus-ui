@@ -54,7 +54,7 @@ export default function Card({ isHorizontal }: CardProps) {
             evolve at a rapid pace...
           </p>
           <Link
-            href="/"
+            href="/articles/3"
             className="text-sm text-violet-600 font-bold underline"
           >
             Continue to read

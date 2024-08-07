@@ -46,7 +46,7 @@ export default function BigCard() {
               consectetur laudantium mollitia ...
             </p>
             <Link
-              href="/"
+              href="/articles/3"
               className="text-sm text-violet-600 font-bold underline"
             >
               Continue to read
