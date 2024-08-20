@@ -10,6 +10,14 @@ export default function Header() {
         <Link href="/">
           <h1 className="text-2xl font-bold">Blogus</h1>
         </Link>
+        {/* <div className="flex items-center gap-5">
+          <Link
+            className="text-md  text-gray-600 hover:text-gray-800 transition-all"
+            href="/write"
+          >
+            Write
+          </Link>
+        </div> */}
         <div className="flex items-center gap-5">
           <Link href="/auth/sign-in">Log in</Link>
           <Link href="/auth/sign-up">

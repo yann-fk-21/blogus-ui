@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 
-import BigCard from './big-card';
-import Card from './card';
+// import BigCard from './big-card';
+// import Card from './card';
 
 export default function Hero() {
   return (
@@ -18,7 +18,7 @@ export default function Hero() {
             Find the latest news, cooking recipes or the latest tip :)
           </p>
         </div>
-        <div className=" flex gap-10 px-20 py-5">
+        {/* <div className=" flex gap-10 px-20 py-5">
           <div className=" w-2/3 flex flex-col items-center gap-5">
             <BigCard />
             <BigCard />
@@ -27,7 +27,7 @@ export default function Hero() {
             <Card isHorizontal />
             <Card isHorizontal />
           </div>
-        </div>
+        </div> */}
       </div>
     </React.Fragment>
   );
